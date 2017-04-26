@@ -97,4 +97,75 @@ public class State {
 			}
 		}
 	}
+
+    static final public State DFA_LALA;
+    static {
+        State state0 = new State(0, false);
+        State state1 = new State(1, false);
+        State state2 = new State(2, true);
+        State state3 = new State(3, true);
+        State state4 = new State(4, false);
+        State state5 = new State(5, true);
+        State state6 = new State(6, true);
+        State state7 = new State(7, false);
+        State state8 = new State(8, false);
+        State state9 = new State(9, false);
+        State state10 = new State(10, false);
+        State state11 = new State(11, true);
+        DFA_LALA = state0;
+
+        State[] states = { state0, state1, state2, state3, state4, state5, state6, state7, state8, state9, state10,
+                state11, };
+        /*
+            0-1 'L' Transitions
+            3-4
+            6-7
+            9-10
+         */
+        for (int i = 0; i < 10; i += 3) {
+            states[i].addNext('L', states[i+1]);
+        }
+        /*
+            2-4 'L' Transitions (extra)
+            5-7
+            8-10
+         */
+        for (int i = 2; i < 9; i += 3) {
+            states[i].addNext('L', states[i+2]);
+        }
+        /*
+            1-2 'a' Transitions
+            4-5
+            7-8
+         */
+        for (int i = 1; i < 8; i += 3) {
+            states[i].addNext('a', states[i+1]);
+        }
+        /*
+            2   'a' Loops
+            5
+            8
+         */
+        for (int i = 2; i < 9; i += 3) {
+            states[i].addNext('a', states[i]);
+        }
+        /*
+            2-3 '_' Transitions
+            5-6
+            8-9
+         */
+        for (int i = 2; i < 9; i += 3) {
+            states[i].addNext('_', states[i+1]);
+        }
+        /*
+            3   '_' Loops
+            6
+            9
+         */
+        for (int i = 3; i < 10; i += 3) {
+            states[i].addNext('_', states[i]);
+        }
+        states[11].addNext('_', states[11]);
+        states[10].addNext('i', states[11]);
+    }
 }

@@ -1,26 +1,30 @@
 package pp.block1.cc.test;
 
-import static pp.block1.cc.dfa.State.ID6_DFA;
-
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
-
 import pp.block1.cc.dfa.MyScanner;
 import pp.block1.cc.dfa.Scanner;
 import pp.block1.cc.dfa.State;
 
+import java.util.List;
+
+import static pp.block1.cc.dfa.State.DFA_LALA;
+import static pp.block1.cc.dfa.State.ID6_DFA;
+
 /** Test class for Scanner implementation. */
-public class ScannerTest {
+public class LaLaScannerTest {
 	private Scanner myGen = new MyScanner(); // TODO instantiate your Scanner implementation
 
 	@Test
 	public void testID6() {
-		this.dfa = ID6_DFA;
+		this.dfa = DFA_LALA;
 		yields("");
-		yields("a12345", "a12345");
-		yields("a12345AaBbCc", "a12345", "AaBbCc");
+		yields("LaLa", "LaLa");
+		yields("LaLaLa", "LaLa", "La");
+		yields("LaLaLaLi", "LaLaLaLi");
+//		yields("LaLaLaLaLi", "La", "LaLaLaLi");
+		yields("LaLaLaLaLi", "LaLa", "LaLa");
+		yields("Laaa_Laa_Laaa_Laaaa__Laa", "Laaa_Laa_", "Laaa_Laaaa__", "Laa");
 	}
 
 	private void yields(String word, String... tokens) {
