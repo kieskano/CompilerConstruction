@@ -3,6 +3,7 @@ package pp.block1.cc.test;
 import org.junit.Assert;
 import org.junit.Test;
 import pp.block1.cc.dfa.MyScanner;
+import pp.block1.cc.dfa.MyScanner2;
 import pp.block1.cc.dfa.Scanner;
 import pp.block1.cc.dfa.State;
 
@@ -13,7 +14,7 @@ import static pp.block1.cc.dfa.State.ID6_DFA;
 
 /** Test class for Scanner implementation. */
 public class LaLaScannerTest {
-	private Scanner myGen = new MyScanner(); // TODO instantiate your Scanner implementation
+	private Scanner myGen = new MyScanner2(); // TODO instantiate your Scanner implementation
 
 	@Test
 	public void testID6() {

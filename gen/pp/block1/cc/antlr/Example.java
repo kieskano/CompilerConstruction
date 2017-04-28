@@ -1,4 +1,4 @@
-// Generated from C:/Users/Wijtse/IdeaProjects/CompilerConstruction/src/pp/block1/cc/antlr\Example.g4 by ANTLR 4.7
+// Generated from /home/han/IdeaProjects/CompilerConstruction/src/pp/block1/cc/antlr/Example.g4 by ANTLR 4.7
 package pp.block1.cc.antlr;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
