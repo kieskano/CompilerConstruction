@@ -18,5 +18,6 @@ public class Grammar1CC6Test {
                 Grammar1CC6.PL1STRING);
         tester.yields("\"Hoi ik \" \"ben\"\" Jaap\" \"Hoi ik \"\"ben\"\" Jaap\"", Grammar1CC6.PL1STRING,
                 Grammar1CC6.PL1STRING, Grammar1CC6.PL1STRING);
+        tester.wrong("\"Hoi ik \" ben\" Jaap\"");
     }
 }
