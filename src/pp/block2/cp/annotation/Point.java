@@ -19,7 +19,16 @@ public class Point {
     ensures getX() == \old(getX()) + n;
    */
   public void moveX(int n) {
+//      int xBefore = x;
+
       x = x + n;
+
+//      int xAfter = x;
+//      System.out.println("BEFORE=" + xBefore + "\tADDITION=" + n + "\tAFTER=" + xAfter);
+//      if (xAfter < xBefore + n) {
+//          System.out.println("ERROR HERE!");
+//          System.exit(1);
+//      }
   }
 
   /*@
