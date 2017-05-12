@@ -1,0 +1,14 @@
+POWER=1
+PLUS=2
+EQUAL=3
+LBR=4
+RBR=5
+NUMBER=6
+BOOL=7
+STR=8
+WS=9
+'^'=1
+'+'=2
+'=='=3
+'('=4
+')'=5
