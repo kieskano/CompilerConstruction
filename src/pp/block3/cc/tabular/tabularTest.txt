@@ -1,0 +1,5 @@
+% An example to test the Tabular application.
+\begin{tabular}{lcr}
+  Aap  & Noot \\
+  Wim  & Zus  \\
+\end{tabular}
