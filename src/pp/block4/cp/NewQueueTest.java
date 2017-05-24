@@ -1,4 +1,4 @@
-package pp.block4.cc.cp;
+package pp.block4.cp;
 
 import nl.utwente.pp.cp.junit.ConcurrentRunner;
 import nl.utwente.pp.cp.junit.Threaded;

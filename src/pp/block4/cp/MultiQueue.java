@@ -1,4 +1,4 @@
-package pp.block4.cc.cp;
+package pp.block4.cp;
 
 import java.util.LinkedList;
 import java.util.List;
