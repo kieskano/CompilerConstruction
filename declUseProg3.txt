@@ -1,0 +1,15 @@
+(
+    D:aap
+    (
+        U:aap
+        D:aap
+        (
+            U:noot
+        )
+        (
+            D:noot
+            U:noot
+        )
+    )
+    U:aap
+)
