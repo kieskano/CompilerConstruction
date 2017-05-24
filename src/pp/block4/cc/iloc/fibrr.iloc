@@ -1,0 +1,11 @@
+start:  loadI   0           => r_p
+        loadI   1           => r_c
+        loadI   1           => r_1
+while:  cmp_GT  r_n, r_1    => r_cmp
+        cbr     r_cmp       -> body,end
+body:   i2i     r_c         => r_t
+        add     r_c, r_p    => r_c
+        i2i     r_t         => r_p
+        subI    r_n, 1      => r_n
+        jumpI               -> while
+end:    out     "fib: ",r_c

@@ -1,0 +1,15 @@
+start:  loadI   1           => r_1
+while:  loadAI  r_arp, @n   => r_n
+        cmp_GT  r_n, r_1    => r_cmp
+        cbr     r_cmp       -> body,end
+body:   loadAI  r_arp, @c   => r_c
+        loadAI  r_arp, @p   => r_p
+        loadAI  r_arp, @c   => r_t
+        add     r_c,r_p     => r_c
+        storeAI r_c         => r_arp, @c
+        i2i     r_t         => r_p
+        storeAI r_p         => r_arp, @p
+        subI    r_n,1       => r_n
+        storeAI r_n         => r_arp, @n
+        jumpI               -> while
+end:    out     "fib: ",r_c
