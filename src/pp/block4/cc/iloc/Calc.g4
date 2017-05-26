@@ -8,7 +8,6 @@ complete
 /** Recursively defined expression. */
 expr : expr TIMES expr # times
      | MINUS expr      # minus
-     | expr PLUS expr  # plus
      | LPAR expr RPAR  # par
      | NUMBER          # number
      ;

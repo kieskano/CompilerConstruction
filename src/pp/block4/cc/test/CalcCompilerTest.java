@@ -28,7 +28,8 @@ public class CalcCompilerTest {
 
 	private int run(String expr) {
 		Program prog = this.compiler.compile(expr);
-		Simulator sim = new Simulator(prog);
+        System.out.println(prog.prettyPrint());
+        Simulator sim = new Simulator(prog);
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		sim.setOut(out);
 		sim.run();
