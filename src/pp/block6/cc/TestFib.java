@@ -23,12 +23,13 @@ public class TestFib {
     @Test
     //(timeout = 1000)
     public void simulate() {
-        Program p = assemble("src/pp/block6/cc/test/fib.iloc");
+        Program p = assemble("src/pp/block6/cc/fib");
         if (SHOW) {
             System.out.println(p.prettyPrint());
         }
         Machine vm = new Machine();
         Simulator sim = new Simulator(p, vm);
+        sim.setIn(new ByteArrayInputStream(("" + 5).getBytes()));
         sim.run();
         if (SHOW) {
             System.out.println(vm);
@@ -42,6 +43,7 @@ public class TestFib {
         try {
             return this.assembler.assemble(file);
         } catch (FormatException | IOException e) {
+            System.out.println(e);
             fail(e.getMessage());
             return null;
         }
