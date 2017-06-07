@@ -28,7 +28,7 @@ public class Grammar {
 	private final Map<NonTerm, List<Rule>> ruleMap;
 	/** Sets of terminals occurring in the rules. */
 	private final Set<Term> terminals;
-	/** List of terminals, indexed by token type. */
+	/** List of terminals, indexed by token getType. */
 	private final List<Term> termList;
 
 	/** Constructs a grammar, with a given start symbol.
@@ -79,7 +79,7 @@ public class Grammar {
 					}
 					Term oldTerm = this.termList.set(tokenType, term);
 					assert oldTerm == null || oldTerm.equals(term) : String
-							.format("Duplicate token '%s' and '%s' with type %d",
+							.format("Duplicate token '%s' and '%s' with getType %d",
 									oldTerm, term, tokenType);
 				}
 			}
@@ -111,7 +111,7 @@ public class Grammar {
 		return this.terminals;
 	}
 
-	/** Returns the terminal for a given token type. */
+	/** Returns the terminal for a given token getType. */
 	public Term getTerminal(int tokenType) {
 		return this.termList.get(tokenType);
 	}

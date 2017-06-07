@@ -2,11 +2,11 @@ package pp.block5.cc.simple;
 
 import pp.iloc.eval.Machine;
 
-/** Pascal data type. */
+/** Pascal data getType. */
 abstract public class Type {
-	/** The singleton instance of the {@link Bool} type. */
+	/** The singleton instance of the {@link Bool} getType. */
 	public static final Type BOOL = new Bool();
-	/** The singleton instance of the {@link Int} type. */
+	/** The singleton instance of the {@link Int} getType. */
 	public static final Type INT = new Int();
 	private final TypeKind kind;
 
@@ -15,15 +15,15 @@ abstract public class Type {
 		this.kind = kind;
 	}
 
-	/** Returns the kind of this type. */
+	/** Returns the kind of this getType. */
 	public TypeKind getKind() {
 		return this.kind;
 	}
 
-	/** returns the size (in bytes) of a value of this type. */
+	/** returns the size (in bytes) of a value of this getType. */
 	abstract public int size();
 
-	/** Representation of the Pascal Boolean type. */
+	/** Representation of the Pascal Boolean getType. */
 	static public class Bool extends Type {
 		private Bool() {
 			super(TypeKind.BOOL);
@@ -40,7 +40,7 @@ abstract public class Type {
 		}
 	}
 
-	/** Representation of the Pascal Integer type. */
+	/** Representation of the Pascal Integer getType. */
 	static public class Int extends Type {
 		private Int() {
 			super(TypeKind.INT);
@@ -71,17 +71,17 @@ abstract public class Type {
 			this.elemType = elemType;
 		}
 
-		/** Returns the lower bound of this array type. */
+		/** Returns the lower bound of this array getType. */
 		public int getLower() {
 			return this.lower;
 		}
 
-		/** Returns the upper bound of this array type. */
+		/** Returns the upper bound of this array getType. */
 		public int getUpper() {
 			return this.upper;
 		}
 
-		/** Returns the element bound of this array type. */
+		/** Returns the element bound of this array getType. */
 		public Type getElemType() {
 			return this.elemType;
 		}

@@ -272,7 +272,8 @@ public class Machine {
 	/** Increases the current program counter value. */
 	public void incPC() {
 		this.pc++;
-	}
+//        System.out.println("PC: "+pc);
+    }
 
 	/** sets the program counter to a given line number. */
 	public void setPC(int line) {
@@ -280,6 +281,7 @@ public class Machine {
 			throw new IllegalArgumentException("Trying to jump to line " + line);
 		}
 		this.pc = line;
+//        System.out.println("PC: "+pc);
 	}
 
 	/** Clears the registers, constants, memory and PC. */

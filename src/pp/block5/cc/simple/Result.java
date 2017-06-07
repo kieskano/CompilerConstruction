@@ -26,25 +26,25 @@ public class Result {
 	}
 
 	/** Adds an association from a parse tree node containing a 
-	 * variable reference to the offset
+	 * variable reference to the getOffset
 	 * of that variable. */
 	public void setOffset(ParseTree node, int offset) {
 		this.offsets.put(node, offset);
 	}
 
-	/** Returns the declaration offset of the variable 
+	/** Returns the declaration getOffset of the variable
 	 * accessed in a given parse tree node. */
 	public int getOffset(ParseTree node) {
 		return this.offsets.get(node);
 	}
 
-	/** Adds an association from a parse tree expression, type,
-	 * or assignment target node to the corresponding (inferred) type. */
+	/** Adds an association from a parse tree expression, getType,
+	 * or assignment target node to the corresponding (inferred) getType. */
 	public void setType(ParseTree node, Type type) {
 		this.types.put(node, type);
 	}
 
-	/** Returns the type associated with a given parse tree node. */
+	/** Returns the getType associated with a given parse tree node. */
 	public Type getType(ParseTree node) {
 		return this.types.get(node);
 	}

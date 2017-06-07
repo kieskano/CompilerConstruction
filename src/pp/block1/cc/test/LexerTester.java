@@ -31,7 +31,7 @@ public class LexerTester {
 			for (int i = 0; i < tokens.length; i++) {
 				if (tokens[i] != result.get(i).getType()) {
 					Assert.fail(String.format(
-							"At index %d, expected type %s but found %s", i,
+							"At index %d, expected getType %s but found %s", i,
 							tokens[i], result.get(i).getType()));
 				}
 			}

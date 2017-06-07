@@ -10,7 +10,7 @@ public class Scope {
 	private int size;
 	/** Map from declared variables to their types. */
 	private final Map<String, Type> types;
-	/** Map from declared variables to their offset within the allocation
+	/** Map from declared variables to their getOffset within the allocation
 	 * record of this scope. */
 	private final Map<String, Integer> offsets;
 
@@ -25,7 +25,7 @@ public class Scope {
 		return this.types.containsKey(id);
 	}
 
-	/** Declares an identifier with a given type, if the identifier
+	/** Declares an identifier with a given getType, if the identifier
 	 * is not yet in this scope.
 	 * @return <code>true</code> if the identifier was added;
 	 * <code>false</code> if it was already declared.
@@ -40,17 +40,17 @@ public class Scope {
 		return result;
 	}
 
-	/** Returns the type of a given (presumably declared) identifier.
+	/** Returns the getType of a given (presumably declared) identifier.
 	 */
-	public Type type(String id) {
+	public Type getType(String id) {
 		return this.types.get(id);
 	}
 
-	/** Returns the offset of a given (presumably declared) identifier. 
+	/** Returns the getOffset of a given (presumably declared) identifier.
 	  * with respect to the beginning of this scope's activation record.
 	  * Offsets are assigned in order of declaration. 
 	  */
-	public Integer offset(String id) {
+	public Integer getOffset(String id) {
 		return this.offsets.get(id);
 	}
 }

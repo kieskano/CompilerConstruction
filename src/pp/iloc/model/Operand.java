@@ -8,14 +8,14 @@ abstract public class Operand {
 		this.type = type;
 	}
 
-	/** Returns the type of this operand. */
+	/** Returns the getType of this operand. */
 	public Type getType() {
 		return this.type;
 	}
 
 	/** Enumeration of all available operand types. */
 	public static enum Type {
-		/** Register-type operand; class {@link Reg}. */
+		/** Register-getType operand; class {@link Reg}. */
 		REG,
 		/** Numeric operand; class {@link Num} or {@link Symb}. */
 		NUM,

@@ -25,7 +25,7 @@ public class FragmentParser extends Parser {
 	public static final int
 		RULE_program = 0, RULE_stat = 1, RULE_target = 2, RULE_expr = 3, RULE_type = 4;
 	public static final String[] ruleNames = {
-		"program", "stat", "target", "expr", "type"
+		"program", "stat", "target", "expr", "getType"
 	};
 
 	private static final String[] _LITERAL_NAMES = {

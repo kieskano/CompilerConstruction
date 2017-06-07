@@ -65,7 +65,7 @@ boolOp: AND | OR;
 /** Comparison operator. */
 compOp: LE | LT | GE | GT | EQ | NE;
 
-/** Data type. */
+/** Data getType. */
 type: INTEGER  #intType
     | BOOLEAN  #boolType
     ;

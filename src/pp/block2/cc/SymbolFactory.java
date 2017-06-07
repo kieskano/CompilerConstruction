@@ -47,7 +47,7 @@ public class SymbolFactory {
 			}
 			// In Antlr 4.4, the token names are given in public static int declarations
 			// at the top of the class; as soon as we see a public static field of
-			// any other type than int, we're done with the tokens
+			// any other getType than int, we're done with the tokens
 			if (field.getType() != int.class) {
 				break;
 			}
@@ -118,7 +118,7 @@ public class SymbolFactory {
 					List<String> names = new SymbolFactory(
 							(Class<? extends Lexer>) lexer).getNames();
 					System.out.printf(
-							"Token types in %s (ordered by type number): %s%n",
+							"Token types in %s (ordered by getType number): %s%n",
 							name, names.subList(1, names.size()));
 				} else {
 					System.err.printf(
