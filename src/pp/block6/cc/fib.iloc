@@ -18,10 +18,12 @@ then:   pop                 => r_trash
         jump                -> r_jmp
 else:   sub r_n,r_1         => r_n
         load r_n            => r_arg
-        loadI 21            => r_returnpc   //Call fib(n-1)
+        loadI 22            => r_returnpc
+        jump                -> Fib          //Call fib(n-1)
         sub r_n,r_1         => r_n
         load r_n            => r_arg
-        loadI 21            => r_returnpc   //Call fib(n-2)
+        loadI 26            => r_returnpc
+        jump                -> Fib          //Call fib(n-2)
         pop                 => r_5
         pop                 => r_trash
         pop                 => r_6
@@ -31,6 +33,7 @@ else:   sub r_n,r_1         => r_n
         pop                 => r_jmp
         push                => r_jmp
         push                => r_7
+        jump                -> r_jmp
 
 
 
