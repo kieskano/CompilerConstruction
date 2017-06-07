@@ -7,7 +7,9 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
-/** Class to type check and calculate flow entries 
+import pp.block6.cc.pascal.*;
+
+/** Class to type check and calculate flow entries
  * and variable offsets. */
 public class Checker extends FuncPascal6BaseListener {
 	/** Result of the latest call of {@link #check}. */
