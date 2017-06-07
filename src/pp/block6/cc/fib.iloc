@@ -1,0 +1,40 @@
+        loadI 0             => r_0
+        loadI 1             => r_1
+        loadI 0             => r_trash
+        in "Argument? "     => r_arg
+        loadI 6             => r_returnpc   //Call fib(n)
+        jump                -> Fib
+
+        out "Result: "
+Fib:    push r_returnpc                     //Create AR
+        push r_0
+        load r_arg          => r_n          //Start actual Fib
+        cmp_LE r_n, r_1     => r_bool
+        cbr r_bool          -> then,else
+then:   pop                 => r_trash
+        pop                 => r_jmp
+        push r_jmp
+        push r_1
+        jump                -> r_jmp
+else:   sub r_n,r_1         => r_n
+        load r_n            => r_arg
+        loadI 21            => r_returnpc   //Call fib(n-1)
+        sub r_n,r_1         => r_n
+        load r_n            => r_arg
+        loadI 21            => r_returnpc   //Call fib(n-2)
+        pop                 => r_5
+        pop                 => r_trash
+        pop                 => r_6
+        pop                 => r_trash
+        add r_5,r_6         => r_7
+        pop                 => r_trash      //Return
+        pop                 => r_jmp
+        push                => r_jmp
+        push                => r_7
+
+
+
+
+
+
+
