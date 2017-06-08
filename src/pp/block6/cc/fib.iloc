@@ -1,40 +1,45 @@
         loadI 0             => r_0
         loadI 1             => r_1
         loadI 0             => r_trash
+        loadI 0             => r_res1
+        loadI 0             => r_res2
         in "Argument? "     => r_arg
-        loadI 6             => r_returnpc   //Call fib(n)
-        jump                -> Fib
-
-        out "Result: "
+        loadI 8             => r_returnpc
+        jumpI               -> Fib          //Call fib(n)
+        pop                 => r_res
+        out "Result: ",r_res
+        jumpI               -> end
 Fib:    push r_returnpc                     //Create AR
         push r_0
-        load r_arg          => r_n          //Start actual Fib
-        cmp_LE r_n, r_1     => r_bool
+        i2i r_arg           => r_n          //Start actual Fib
+        cmp_LE r_n,r_1      => r_bool
         cbr r_bool          -> then,else
 then:   pop                 => r_trash
         pop                 => r_jmp
         push r_jmp
         push r_1
         jump                -> r_jmp
-else:   sub r_n,r_1         => r_n
-        load r_n            => r_arg
-        loadI 22            => r_returnpc
-        jump                -> Fib          //Call fib(n-1)
-        sub r_n,r_1         => r_n
-        load r_n            => r_arg
-        loadI 26            => r_returnpc
-        jump                -> Fib          //Call fib(n-2)
-        pop                 => r_5
+else:   subI r_n,1          => r_arg
+        loadI 25            => r_returnpc
+        push r_n
+        jumpI               -> Fib          //Call fib(n-1)
+        pop                 => r_res1
         pop                 => r_trash
-        pop                 => r_6
+        pop                 => r_n
+        push r_res1
+        subI r_n,2          => r_arg
+        loadI 32            => r_returnpc
+        jumpI               -> Fib          //Call fib(n-2)
+        pop                 => r_res2
         pop                 => r_trash
-        add r_5,r_6         => r_7
+        pop                 => r_res1
+        add r_res1,r_res2   => r_7
         pop                 => r_trash      //Return
         pop                 => r_jmp
-        push                => r_jmp
-        push                => r_7
+        push r_jmp
+        push r_7
         jump                -> r_jmp
-
+end:    nop
 
 
 

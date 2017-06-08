@@ -25,11 +25,11 @@ public class TestFib {
     public void simulate() {
         Program p = assemble("src/pp/block6/cc/fib");
         if (SHOW) {
-            System.out.println(p.prettyPrint());
+            //System.out.println(p.prettyPrint());
         }
         Machine vm = new Machine();
         Simulator sim = new Simulator(p, vm);
-        sim.setIn(new ByteArrayInputStream(("" + 5).getBytes()));
+        sim.setIn(new ByteArrayInputStream(("" + 40).getBytes()));
         sim.run();
         if (SHOW) {
             System.out.println(vm);
